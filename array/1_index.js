@@ -17,7 +17,7 @@
 
 
 const array1=['a','b','c','d','e','f'];
-const array2=['z','t','p','r'];
+const array2=['z','t','c','r'];
 function containsCommenItems(array1,array2){
   for(let i=0;i<array1.length;i++){
     for(let j=0;j<array2.length;j++){

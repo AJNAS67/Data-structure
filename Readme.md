@@ -4,7 +4,7 @@ Each node consist of data value and pointer , that pointer point to the next nod
 
 
 file 'linked_list' used singly list
-** preppend ,in preppend methord used to add element to bigning of linked list
+** prepend ,in prepend methord used to add element to bigning of linked list
 ** append ,in append methord used to add elements to end of linked list
 ** inset, inset methord used to insert value in specified location 
 ** reverse ,reverse methord used to reverse the array
@@ -15,7 +15,7 @@ file 'linked_list' used singly list
 
 
 file '1_linked list' used doubly linked list
-** preppend ,in preppend methord used to add element to bigning of linked list
+** prepend ,in prepend methord used to add element to bigning of linked list
 ** append ,in append methord used to add elements to end of linked list
 ** printReverse, printReverse methord used to print reverse order the linked list
 ** removeFromFront ,removeFromFront methord used to remove element from front/first element from linked list
