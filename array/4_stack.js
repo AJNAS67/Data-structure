@@ -18,7 +18,7 @@ class Stack{
         return this.item.length
     }
     print(){
-        console.log(this.item.toLocaleString());
+        console.log(this.item.toString());
     }
 }
 
