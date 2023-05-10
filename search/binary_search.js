@@ -1,7 +1,7 @@
 //problom:--Given a sorted arraay of `n` elements and a target element `t` ,find the index of `t` in the array . Return -1 if the target element is not found.
 //sorted array
 
-function bubbleSort(array) {
+function sortArray(array) {
   let i, j, temp;
   for (i = 0; i < array.length; i++) {
     for (j = 0; j < array.length - i - 1; j++) {
@@ -21,7 +21,7 @@ console.log(arr);
 // 0(logn)
 
 function binarySearch(array, target) {
-  const arr = bubbleSort(array);
+  const arr = sortArray(array);
   console.log(arr, "arr");
 
   let leftIndex = 0;
@@ -43,7 +43,7 @@ console.log(binarySearch(arr, 84));
 
 // 0(logn) input size reduce half and half so ..
 function recursiveBinarySearch(array, target) {
-  const arr = bubbleSort(array);
+  const arr = sortArray(array);
   return Search(arr, target, 0, arr.length - 1);
 }
 function Search(arr, target, leftIndex, rightIndex) {

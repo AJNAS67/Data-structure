@@ -1,5 +1,6 @@
 let array = [2, -2, 4, 11, 8, 44, -4];
-
+// two loop while and for 
+// 0(n^2)
 function bubbleSort(arr) {
   do {
     swapped = false;

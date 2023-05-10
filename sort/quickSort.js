@@ -1,3 +1,6 @@
+// O(nlogn)
+//but its take space
+
 function quickSort(array) {
   if (array.length <= 1) return array;
   let pivot = array[array.length - 1];

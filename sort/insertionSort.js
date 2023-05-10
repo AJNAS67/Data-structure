@@ -17,13 +17,13 @@ function insertionSort1(arr) {
   for (let i = 1; i < arr.length; i++) {
     let j = i - 1;
     let currentValue = arr[i];
-    while (j > 0 && arr[j] > currentValue) {
+    while (j >= 0 && arr[j] < currentValue) {
       arr[j + 1] = arr[j];
       j--;
     }
     arr[j + 1] = currentValue;
   }
-  return arr
+  return arr;
 }
-const sorted=insertionSort1(arr)
-console.log(sorted,'sorted');;
+const sorted = insertionSort1(arr);
+console.log(sorted, "sorted");

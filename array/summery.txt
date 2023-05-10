@@ -1,0 +1,10 @@
+ // practice--- remove Duplicate form an array
+ // practice--- calculate total price of mobiles
+ // practice--- if type === 'Mobile' double the price of array;
+ // practice-- compute exponent of a number power(2,4)--->2*2*2*2
+// practice-- from an unsorted array ,check whether there are any two numbers that will sum up to a given number
+//array-4_stack --- reverse string using stack
+
+
+//practice2--- Find the missing number form 1 o n
+
