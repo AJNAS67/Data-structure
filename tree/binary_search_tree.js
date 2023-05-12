@@ -58,19 +58,74 @@ class BinarySearchTree {
     }
   }
   inOrder(root) {
-    if(root){
-        this.inOrder(root.left);
-        console.log(root.value);
-        this.inOrder(root.right)
+    if (root) {
+      this.inOrder(root.left);
+      console.log(root.value);
+      this.inOrder(root.right);
     }
   }
-  postOrder(root){
-    if(root){
-        this.postOrder(root.left)
-        this.postOrder(root.right)
-        console.log(root.value);
-
+  postOrder(root) {
+    if (root) {
+      this.postOrder(root.left);
+      this.postOrder(root.right);
+      console.log(root.value);
     }
+  }
+
+  //
+  levelOrder() {
+    const queue = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let cur = queue.shift();
+      console.log(cur.value);
+      if (cur.left) {
+        queue.push(cur.left);
+      }
+      if (cur.right) {
+        queue.push(cur.right);
+      }
+    }
+  }
+  minValue(root) {
+    if (!root.left) {
+      return root.value;
+    } else {
+      return this.minValue(root.left);
+    }
+  }
+  maxValue(root) {
+    if (!root.right) {
+      return root.value;
+    } else {
+      return this.maxValue(root.right);
+    }
+  }
+  delete(value) {
+    this.root = this.deleteNode(this.root, value);
+  }
+  deleteNode(root, value) {
+    if (root == null) {
+      return root;
+    }
+    if (value < root.value) {
+      root.left = this.deleteNode(root.left, value);
+    } else if (value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    }
+    //value equal
+    else {
+      if (!root.left && !root.right) {
+        return null;
+      } else if (!root.left) {
+        return root.right;
+      } else if (!root.right) {
+        return root.left;
+      }
+      root.value = this.minValue(root.right);
+      root.right = this.deleteNode(root.right, root.value);
+    }
+    return root;
   }
 }
 const bst = new BinarySearchTree();
@@ -82,13 +137,22 @@ bst.insert(7);
 bst.insert(66);
 bst.insert(55);
 bst.insert(22);
-console.log(bst.search(bst.root, 10));
-console.log(bst.search(bst.root, 55));
-console.log(bst.search(bst.root, 66));
-console.log('preOrder below');
-bst.preOrder(bst.root);
-console.log('inOrder below');
-bst.inOrder(bst.root)
-console.log('postOrder below');
-bst.postOrder(bst.root)
+// console.log(bst.search(bst.root, 10));
+// console.log(bst.search(bst.root, 55));
+// console.log(bst.search(bst.root, 66));
+// console.log("preOrder below");
+// bst.preOrder(bst.root);
+// console.log("inOrder below");
+// bst.inOrder(bst.root);
+// console.log("postOrder below");
+// bst.postOrder(bst.root);
+// console.log("levelOrder below BFS");
+// bst.levelOrder();
+// console.log("Min value of root node is ", bst.minValue(bst.root));
+// console.log("Max value of root node is ", bst.maxValue(bst.root));
+bst.levelOrder();
+bst.delete(4)
+console.log('hi');
+bst.levelOrder();
+
 
