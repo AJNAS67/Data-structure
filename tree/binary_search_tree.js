@@ -128,6 +128,9 @@ class BinarySearchTree {
     }
     return root;
   }
+
+  //  I will find value ,and return closest value node.
+  
   findClosestInBst(tree, target) {
     let currentNode = tree;
     let closestValue = tree.value;
@@ -145,6 +148,32 @@ class BinarySearchTree {
     }
     return closestValue;
   }
+
+  isBSTUtil(node, min, max) {
+    // Base case: an empty tree is considered as a BST
+    if (node === null) {
+      return true;
+    }
+  
+    // Check if the current node violates the BST property
+    if (node.val <= min || node.val >= max) {
+      return false;
+    }
+  
+    // Recursively check the left and right subtrees
+    return (
+      this.isBSTUtil(node.left, min, node.val) &&
+      this.isBSTUtil(node.right, node.val, max)
+    );
+  }
+  //check its BST or Not
+  //
+   isBST(root) {
+    return this.isBSTUtil(root, 0, 144);
+  }
+   
+  
+  
 }
 const bst = new BinarySearchTree();
 console.log("Tree is empty ? ", bst.isEmpty());
@@ -173,3 +202,5 @@ bst.delete(4);
 console.log("hi");
 bst.levelOrder();
 console.log(bst.findClosestInBst(bst.root, 25),'closest value');
+
+console.log(bst.isBST(bst.root));
