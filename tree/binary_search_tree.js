@@ -115,6 +115,7 @@ class BinarySearchTree {
     }
     //value equal
     else {
+      //leaf
       if (!root.left && !root.right) {
         return null;
       } else if (!root.left) {
@@ -126,6 +127,23 @@ class BinarySearchTree {
       root.right = this.deleteNode(root.right, root.value);
     }
     return root;
+  }
+  findClosestInBst(tree, target) {
+    let currentNode = tree;
+    let closestValue = tree.value;
+    while (currentNode !== null) {
+      if (Math.abs(target - currentNode.value) < Math.abs(target - closestValue)) {
+        closestValue = currentNode.value;
+      }
+      if (target < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if (target > currentNode.value) {
+        currentNode = currentNode.right;
+      } else {
+        break;
+      }
+    }
+    return closestValue;
   }
 }
 const bst = new BinarySearchTree();
@@ -151,8 +169,7 @@ bst.insert(22);
 // console.log("Min value of root node is ", bst.minValue(bst.root));
 // console.log("Max value of root node is ", bst.maxValue(bst.root));
 bst.levelOrder();
-bst.delete(4)
-console.log('hi');
+bst.delete(4);
+console.log("hi");
 bst.levelOrder();
-
-
+console.log(bst.findClosestInBst(bst.root, 25),'closest value');
