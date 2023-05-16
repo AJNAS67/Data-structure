@@ -1,3 +1,4 @@
+//this problem solved two ways ,,one using queue method
 const graph = {
   a: ["b", "c"],
   b: ["d"],
